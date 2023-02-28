@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Movie Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #09181d;
+            color: aliceblue;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        input {
+            width: 100%;
+            outline: none;
+            border: none;
+        }
+
+        .inputMain {
+            width: 50%;
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .inputMain {
+                width: 100%;
+            }
+
+        }
+
+        #cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-items: center;
+            padding: 0;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .delete {
+            opacity: 0.5;
+            transition: all 0.5s ease;
+        }
+
+        select {
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            padding: 2% 10%;
+            background: linear-gradient(0deg, #916798 0%, #2babd0 100%);
+        }
+
+        option {
+            background: rgb(34, 17, 17);
+            color: #fff;
+            padding: 12%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2 class="text-center  p-4 bg-dark  "> Card Generator Using 
+            <span class="text-dark bg-warning rounded fs-1">JS</span> 
+            
+        </h2>
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                 
+                <span>Welcome <strong id="greet"> </strong> 👋. This Website Takes Image URL and it's Name to Generate a Card 😄😄😄...</span>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        </div>
+        
+        
+    </header>
+
+    <section class="inputMain  container ">
+
+        <form>
+            <input type="text" class="mt-2  p-2 rounded  bg-dark text-center" placeholder=" Paste the img URl"
+                id="img-input">
+            <input type="text" class="mt-2  p-2 rounded  bg-dark text-center" placeholder="Enter the Name "
+                id="name-input">
+        </form>
+
+    </section>
+    <div class="container d-grid  d-md-flex w-50 justify-content-md-end">
+        <button class="my-4 text-center btn btn-outline-warning fw-bold" id="add-button">Submit</button>
+    </div>
+
+
+
+    <div class="container " id="cards">
+    </div>
+    <script>
+        
+    </script>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
