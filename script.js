@@ -2,9 +2,17 @@ const imgUrl = document.querySelector('#img-input');
 
 const nameInput = document.querySelector('#name-input');
 
+const profilePic = document.querySelector('#profile-pic');
+
+const userName = document.querySelector('#user-name');
+
 const addButton = document.querySelector('#add-button');
 
 const cardRow = document.querySelector('#cards');
+
+const errorMsg = document.querySelector('#error')
+
+const cardsTotals = document.querySelector('#cards-totals')
 
 //Greeting Prompt
 
@@ -13,11 +21,24 @@ let userName = window.prompt('Enter Your Name');
 greetName.textContent = ` ${userName} `;
 
 //Event Listeners
-addButton.addEventListener('click', () => {
-    event.preventDefault();
+addButton.addEventListener('click', (e) => {
+    e.preventDefault();
     //div for col
     const colDiv = document.createElement('div');
-    colDiv.setAttribute('class', 'card bg-dark  '); //adding div class
+    colDiv.setAttribute('class', 'card bg-dark'); //adding div class
+
+    //adding Profile Pic
+    const profileDiv = document.createElement('IMG');
+    profileDiv.setAttribute('class', "rounded float-start")
+    profileDiv.setAttribute('src', profilePic.value)
+    colDiv.appendChild(profileDiv);
+
+    //adding User Name
+    const userNameDiv = document.createElement('div')
+    userNameDiv.setAttribute('class', 'card-header');
+    userNameDiv.innerHTML = userName.value
+    colDiv.appendChild(userNameDiv)
+    userName.value = ''
 
     //inside div img url
     const imgCard = document.createElement('IMG');
@@ -40,11 +61,12 @@ addButton.addEventListener('click', () => {
 
     //Adding delete button
     const deleteButton = document.createElement('button')
-    deleteButton.innerHTML = '<i class="bi bi-trash3 fs-3"></i>'
+    deleteButton.innerHTML = '<i class="bi bi-trash fs-3"></i>'
     deleteButton.setAttribute('class', 'btn btn-outline-danger text-white ')
+
+
     //Delete button Function 
     deleteButton.addEventListener('click', () => {
-        deleteButton.classList.toggle('delete')
         cardRow.removeChild(colDiv)
     })
 
@@ -56,9 +78,8 @@ addButton.addEventListener('click', () => {
     cardBody.appendChild(cardTitle)
     nameInput.value = ''
 
+
     //Append to Col div
     cardRow.appendChild(colDiv)
-
-
 
 })
