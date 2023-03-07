@@ -17,8 +17,8 @@ const cardsTotals = document.querySelector('#cards-totals')
 //Greeting Prompt
 
 const greetName = document.querySelector('#greet');
-let userName = window.prompt('Enter Your Name');
-greetName.textContent = ` ${userName} `;
+let userNameGreet = window.prompt('Enter Your Name');
+greetName.textContent = ` ${userNameGreet} `;
 
 //Event Listeners
 addButton.addEventListener('click', (e) => {
