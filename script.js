@@ -2,8 +2,6 @@ const imgUrl = document.querySelector('#img-input');
 
 const nameInput = document.querySelector('#name-input');
 
-const profilePic = document.querySelector('#profile-pic');
-
 const userName = document.querySelector('#user-name');
 
 const addButton = document.querySelector('#add-button');
@@ -34,11 +32,11 @@ addButton.addEventListener('click', (e) => {
     const colDiv = document.createElement('div');
     colDiv.setAttribute('class', 'card bg-dark'); //adding div class
 
-    //adding Profile Pic
-    const profileDiv = document.createElement('IMG');
-    profileDiv.setAttribute('class', "rounded float-start")
-    profileDiv.setAttribute('src', profilePic.value)
-    colDiv.appendChild(profileDiv);
+//     //adding Profile Pic
+//     const profileDiv = document.createElement('IMG');
+//     profileDiv.setAttribute('class', "rounded float-start")
+//     profileDiv.setAttribute('src', profilePic.value)
+//     colDiv.appendChild(profileDiv);
 
     //adding User Name
     const userNameDiv = document.createElement('div')
